@@ -8,13 +8,9 @@ var config = {
 };
 firebase.initializeApp(config);
 
-
-
 var dbFirebase = firebase.database();
 var dbRef = firebase.database().ref()
 var firebaseAuth = firebase.auth
-var firebase = firebase.auth().auth
-
 
 var numLEDR1 = dbFirebase.ref('room1/UserinRoom');
 var numLEDR1s = numLEDR1.on('value', function (snapshot) {
