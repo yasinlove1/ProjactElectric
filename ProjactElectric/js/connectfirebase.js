@@ -13,7 +13,7 @@ var dbRef = firebase.database().ref()
 var firebaseAuth = firebase.auth
 
 var numLEDR1 = dbFirebase.ref('room1/UserinRoom');
-var numLEDR1s = numLEDR1.on('value', function (snapshot) {
+var numLEDR1s = numLEDR1.on('value', function(snapshot) {
 
     var snapLEDR1 = snapshot.val();
     var num = 0;
@@ -31,7 +31,7 @@ var numLEDR1s = numLEDR1.on('value', function (snapshot) {
     $('#userinRoomS101').text(snapLEDR1);
 });
 var numAIR0R1 = dbFirebase.ref('room1/air');
-var numAIR0R1s = numAIR0R1.on('value', function (snapshot) {
+var numAIR0R1s = numAIR0R1.on('value', function(snapshot) {
     var snapAIR0R1 = snapshot.val();
     var num = 0
     var AIR;
@@ -46,7 +46,7 @@ var numAIR0R1s = numAIR0R1.on('value', function (snapshot) {
 });
 
 var numAIR1R1 = dbFirebase.ref('room1/air1');
-var numAIR1R1s = numAIR1R1.on('value', function (snapshot) {
+var numAIR1R1s = numAIR1R1.on('value', function(snapshot) {
     var snapAIR1R1 = snapshot.val();
     var num = 0
     var AIR;
