@@ -2,24 +2,25 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/css.css">
-    <link rel="stylesheet" href="css/docs.css">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
-    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.orange-amber.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+    crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/css.css">
+  <link rel="stylesheet" href="css/docs.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.orange-amber.min.css" />
+  
+  <!-- <script src="login.js"></script> -->
+  
+  <!-- <script src="js/Queue.js"></script> -->
 
-    <!-- <script src="login.js"></script> -->
-
-    <!-- <script src="js/Queue.js"></script> -->
-
-    <title>EAU</title>
+  <title>EAU</title>
 
 
 </head>
@@ -27,9 +28,46 @@
 <body class="body">
 
 
-    <div class="container">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+
+        <!-- //from login// -->
+        <div class="from">
+          <div class="login-from">
+            <div class="tab-content">
+              <div id="login-tab" class="tab-from-group">
+                <form id="frmLogin">
+                  <div class="form-group">
+                    <h3>Log In
+                      <hr>
+                    </h3>
+                    <label for="email" id="lbEmail">Username</label>
+                    <input type="email" class="form-control" id="email" for='email' placeholder="Enter email">
+                  </div>
+                  <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" for='password' placeholder="Password">
+                    <label for="password" id="lbPassword" style="display: none; color: red;">Wrong Password!</label>
+                  </div>
+                  <label id="logInFail" style="display: none; color: red;">LogIn Fail Plece Check Username & Password!</label>
+                </form>
+              </div>
+
+
+            </div>
+            <input type="button" class="btn btn-primary" id="signin" value="LOGIN">
+            <!-- <input type="button" class="btn btn-primary" id="signup" value="CREATE NEW USER"> -->
+           
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-md-9">
+        <h3>ตึกS <small><input type="button" class="btn btn-primary" id="signout" style="display: none;" value="LOGOUT"></small></h3>
+        <hr>
         <div class="row">
-<<<<<<< HEAD
           <div class="col-sm-5">
             <div class="padding">
               <center>
@@ -55,45 +93,12 @@
             </div>
           </div>
 
-=======
-            <div class="col-md-3">
-
-                <!-- //from login// -->
-                <div class="from">
-                    <div class="login-from">
-                        <div class="tab-content">
-                            <div id="login-tab" class="tab-from-group">
-                                <form id="frmLogin">
-                                    <div class="form-group">
-                                        <h3>Log In
-                                            <hr>
-                                        </h3>
-                                        <label for="email" id="lbEmail">Username</label>
-                                        <input type="email" class="form-control" id="email" for='email' placeholder="Enter email">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="password">Password</label>
-                                        <input type="password" class="form-control" id="password" for='password' placeholder="Password">
-                                        <label for="password" id="lbPassword" style="display: none; color: red;">Wrong Password!</label>
-                                    </div>
-                                    <label id="logInFail" style="display: none; color: red;">LogIn Fail Plece Check Username & Password!</label>
-                                </form>
-                            </div>
 
 
-                        </div>
-                        <input type="button" class="btn btn-primary" id="signin" value="LOGIN">
-                        <!-- <input type="button" class="btn btn-primary" id="signup" value="CREATE NEW USER"> -->
-
-                    </div>
-                </div>
->>>>>>> 2b20a2abff8992b67811445714c8ddbd6688249a
-
-            </div>
-
-        
-            <div class="col-md-9">
-                <h3>ตึกS <small><input type="button" class="btn btn-primary" id="signout" style="display: none;" value="LOGOUT"></small></h3>
+          <div class="col-sm-5">
+            <div class="padding">
+              <center>
+                <h4>S102</h4>
                 <hr>
 
                 <h4>แสงสว่าง</h4>
@@ -113,58 +118,60 @@
                 <button type="button" class="btn btn-info btn-lg btnModel2" data-toggle="modal" data-target="#myModal102" disabled>Control</button>
               </center>
             </div>
+          </div>
+        </div>
+      </div>
 
 
 
-            <!-- Modal s101-->
-            <div class="modal fade" id="myModal101" role="dialog">
-                <div class="modal-dialog">
+      <!-- Modal s101-->
+      <div class="modal fade" id="myModal101" role="dialog">
+        <div class="modal-dialog">
 
-                    <!-- Modal content-->
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">S101</h4>
-                        </div>
-                        <div class="modal-body">
-                            <center>
-                                <div class="col-lg-4">
-                                    <p>
-                                        <img src="https://maxcdn.icons8.com/iOS7/PNG/100/Very_Basic/idea-100.png" title="Idea" width="100">
-                                    </p>
-                                    <h4>แสงสว่าง</h4>
-                                    <br>
-                                    <!--toggle button-->
-                                    <label class="switch" id="Light_Row_one">
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">S101</h4>
+            </div>
+            <div class="modal-body">
+              <center>
+                <div class="col-lg-4">
+                  <p>
+                    <img src="https://maxcdn.icons8.com/iOS7/PNG/100/Very_Basic/idea-100.png" title="Idea" width="100">
+                  </p>
+                  <h4>แสงสว่าง</h4>
+                  <br>
+                  <!--toggle button-->
+                  <label class="switch" id="Light_Row_one">
                     <input onclick="Light_Row_one.set(+this.checked)" type="checkbox">
                     <div class="slider round"></div>
                   </label>
-                                    <br>
-                                </div>
-                                <img src="https://maxcdn.icons8.com/iOS7/PNG/100/Household/air_conditioner-100.png" title="Air Conditioner" width="100">
+                  <br>
+                </div>
+                <img src="https://maxcdn.icons8.com/iOS7/PNG/100/Household/air_conditioner-100.png" title="Air Conditioner" width="100">
 
-                                <h4>เครื่องปรับอากาศ</h4>
-                                <br>
-                                <!--toggle button-->
-                                <label class="switch" id="Airone">
+                <h4>เครื่องปรับอากาศ</h4>
+                <br>
+                <!--toggle button-->
+                <label class="switch" id="Airone">
                   <input onclick="addArr(1)" type="checkbox">
                   <div class="slider round"></div>
                 </label>
-                                <br>
-                                <label class="switch" id="Airone">
+                <br>
+                <label class="switch" id="Airone">
                   <input onclick="addArr(2)" type="checkbox">
                   <div class="slider round"></div>
                 </label>
-                            </center>
-                        </div>
-
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-                </div>
+              </center>
             </div>
 
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
 
 
@@ -172,61 +179,65 @@
 
 
 
-            <!-- Modal s102 -->
-            <div class="modal fade" id="myModal102" role="dialog">
-                <div class="modal-dialog">
 
-                    <!-- Modal content-->
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">S102</h4>
-                        </div>
-                        <div class="modal-body">
-                            <center>
-                                <div class="col-lg-4">
-                                    <img src="https://maxcdn.icons8.com/iOS7/PNG/100/Very_Basic/idea-100.png" title="Idea" width="100">
-                                    </p>
-                                    <h4>แสงสว่าง</h4>
-                                    <br>
-                                    <!--toggle button-->
-                                    <label class="switch" id="Light_Row_one">
+      <!-- Modal s102 -->
+      <div class="modal fade" id="myModal102" role="dialog">
+        <div class="modal-dialog">
+
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">S102</h4>
+            </div>
+            <div class="modal-body">
+              <center>
+                <div class="col-lg-4">
+                  <img src="https://maxcdn.icons8.com/iOS7/PNG/100/Very_Basic/idea-100.png" title="Idea" width="100">
+                  </p>
+                  <h4>แสงสว่าง</h4>
+                  <br>
+                  <!--toggle button-->
+                  <label class="switch" id="Light_Row_one">
                     <input onclick="Light_Row_one.set(+this.checked)" type="checkbox">
                     <div class="slider round"></div>
                   </label>
-                                    <br>
-                                </div>
-                                <img src="https://maxcdn.icons8.com/iOS7/PNG/100/Household/air_conditioner-100.png" title="Air Conditioner" width="100">
+                  <br>
+                </div>
+                <img src="https://maxcdn.icons8.com/iOS7/PNG/100/Household/air_conditioner-100.png" title="Air Conditioner" width="100">
 
-                                <h4>เครื่องปรับอากาศ</h4>
-                                <br>
-                                <!--toggle button-->
-                                <label class="switch" id="Airone">
+                <h4>เครื่องปรับอากาศ</h4>
+                <br>
+                <!--toggle button-->
+                <label class="switch" id="Airone">
                   <input onclick="addArr(1)" type="checkbox">
                   <div class="slider round"></div>
                 </label>
-                                <br>
-                                <label class="switch" id="Airone">
+                <br>
+                <label class="switch" id="Airone">
                   <input onclick="addArr(2)" type="checkbox">
                   <div class="slider round"></div>
                 </label>
-                            </center>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-                </div>
+              </center>
             </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
 
-            <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-            <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-            <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
-            <script src="js/connectfirebase.js"></script>
-            <script src="js/login.js"></script>
+      <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+        crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+        crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+        crossorigin="anonymous"></script>
+      <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+      <script src="js/connectfirebase.js"></script>
+      <script src="js/login.js"></script>
 
 </body>
 

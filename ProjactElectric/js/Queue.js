@@ -1,41 +1,41 @@
+var queu = [];
 
- 
- var stac = [];
+function addArr(num) {
+    // var status = true;
 
- export function addArr(num) {
+    if (queu.length < 2) {
 
-     var upToFirebaseRoom1Air1 = dbFirebase.ref("room1/air")
-     var upToFirebaseRoom1Air2 = dbFirebase.ref("room1/air1")
-     var upToFirebaseRoom2Air1 = dbFirebase.ref("room2/air")
-     var upToFirebaseRoom2Air2 = dbFirebase.ref("room2/air1")
-         //เช็คเพื่อปิด แอร์ ทั่ง room1 - room2
-     if (upToFirebaseRoom1Air1 == 1 && num == 1) {
-         upToFirebaseRoom1Air1.set(0)
-     } else if (upToFirebaseRoom1Air2 == 2 && num == 2) {
-         upToFirebaseRoom1Air2.set(0)
-     } else if (upToFirebaseRoom2Air1 == 3 && num == 3) {
-         upToFirebaseRoom2Air1.set(0)
-     } else if (upToFirebaseRoom2Air2 == 4 && num == 4) {
-         upToFirebaseRoom2Air2.set(0)
-     } else {
-         stac.push(num)
-         console.log(stac)
-     }
+        queu.push(num)
 
-    //  upToFirebase.set(stac.shift(0));
-     setInterval(function() {
-         var valToFirebase = stac.shift()
+    } if (queu.length == 2) {
 
-         //เช็คเพื่อเปิดแอร์ ตามปุ่ม
-         if (valToFirebase == 1) {
-             upToFirebaseRoom1Air1.set(valToFirebase)
-         } else if (valToFirebase == 2) {
-             upToFirebaseRoom1Air2.set(valToFirebase)
-         } else if (valToFirebase == 3) {
-             upToFirebaseRoom2Air1.set(valToFirebase)
-         } else if (valToFirebase == 4) {
-             upToFirebaseRoom2Air2.set(valToFirebase)
-         }
-     }, 50000);
+        outQueue()
 
- }
+    }
+
+    console.log(queu)
+    console.log(queu.length)
+}
+
+function outQueue() {
+
+    var upToFirebaseRoom1Air2 = dbFirebase.ref("room1/air1")
+    var upToFirebaseRoom1Air1 = dbFirebase.ref("room1/air")
+    var upToFirebaseRoom2Air1 = dbFirebase.ref("room2/air")
+    var upToFirebaseRoom2Air2 = dbFirebase.ref("room2/air1")
+
+    setInterval(() => {
+        var dataOutQueue = queu.shift()
+        if (dataOutQueue == 1) {
+            upToFirebaseRoom1Air1.set(dataOutQueue)
+        } else if (dataOutQueue == 2) {
+            upToFirebaseRoom1Air2.set(dataOutQueue)
+        } else if (dataOutQueue == 3) {
+            upToFirebaseRoom2Air1.set(dataOutQueue)
+        } else if (dataOutQueue == 4) {
+            upToFirebaseRoom2Air2.set(dataOutQueue)
+        }
+
+        console.log(dataOutQueue)
+    }, 5000)
+}
