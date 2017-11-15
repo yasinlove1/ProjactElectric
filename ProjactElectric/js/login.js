@@ -43,17 +43,17 @@ $("#signout").click(function () {
 })
 
 
-// $("#signup").click(function () {
-//     $("#lbPassword").hide()
-//     $("#logInFail").hide()
-//     var fromSignUp = {
-//         email: $("#email").val(),
-//         pass: $("#password").val()
-//     }
-//     fireBaseAuth.createUserWithEmailAndPassword(fromSignUp.email, fromSignUp.pass).then(function () {
-//         alert("SignUp Success!");
-//     }, function (error) {
-//         alert("SignUp Error!");
-//     })
-// })
+$("#signup").click(function () {
+    $("#lbPassword").hide()
+    $("#logInFail").hide()
+    var fromSignUp = {
+        email: $("#email").val(),
+        pass: $("#password").val()
+    }
+    fireBaseAuth.createUserWithEmailAndPassword(fromSignUp.email, fromSignUp.pass).then(function () {
+        alert("สมัครสมาชิกเสร็จเรียบร้อย");
+    }, function (error) {
+        alert("กรอกข้อมูลไม่ครบ");
+    })
+})
 
