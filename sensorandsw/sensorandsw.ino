@@ -7,15 +7,21 @@
 unsigned long timeout;
 int sensorone = D1;
 int sensortwo = D2;
+int buttonAir1 = D3;
+int buttonAir2 = D6;
 int sensorState = 0;
+int buttonStateAir1 = 0;
+int buttonStateAir2 = 0;
 bool toggle = false;
 bool toggle1 = false;
 int count = 0;
 
 void setup() {
 
-  pinMode(sensorone, INPUT);
-  pinMode(sensortwo, INPUT);
+  //  pinMode(sensorone, INPUT);
+  //  pinMode(sensortwo, INPUT);
+  pinMode(buttonAir1, INPUT);
+  pinMode(buttonAir2, INPUT);
   Serial.begin(115200);
   WiFi.mode(WIFI_STA);
   WiFi.begin (WIFI_SSID, WIFI_PASSWORD);
@@ -26,9 +32,9 @@ void setup() {
     delay(500);
 
   }//loop while
-  //  Serial.println();
-  //  Serial.println("connecting.....");
-  //  Serial.println(WiFi.localIP());
+  Serial.println();
+  Serial.println("connecting.....");
+  Serial.println(WiFi.localIP());
 
 
   Firebase.begin(FIREBASE_HOST, FIREBASE_AUTH);
@@ -36,6 +42,47 @@ void setup() {
 }
 
 void loop() {
+
+
+  button();
+
+}
+
+
+void button() {
+
+
+  Firebase.set("room1/button", buttonStateAir1);
+  Firebase.set("room1/button2", buttonStateAir2);
+
+  Serial.println(digitalRead(buttonAir2));
+
+
+  if (digitalRead(buttonAir1) == HIGH && buttonStateAir1 == 0) {
+
+
+    buttonStateAir1 = 1 ;
+
+  } else if (digitalRead(buttonAir1) == HIGH && buttonStateAir1 == 1) {
+
+    buttonStateAir1 = 0 ;
+
+  }
+
+  if (digitalRead(buttonAir2) == HIGH && buttonStateAir2 == 0) {
+
+    buttonStateAir2 = 2 ;
+  } else if (digitalRead(buttonAir2) == HIGH && buttonStateAir2 == 2) {
+
+    buttonStateAir2 = 0 ;
+  }
+}
+
+
+
+
+
+void sensor() {
   if (count >= 0) {
     Firebase.set("room1/UserinRoom", count);
   }
@@ -71,6 +118,5 @@ void loop() {
     toggle = false;
 
   }
-
-
 }
+
