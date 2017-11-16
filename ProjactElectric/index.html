@@ -26,40 +26,9 @@
 </head>
 
 <body class="body">
-
-
   <div class="container">
     <div class="row">
       <div class="col-md-3">
-
-        <!-- //from login// -->
-        <div class="from">
-          <div class="login-from">
-            <div class="tab-content">
-              <div id="login-tab" class="tab-from-group">
-
-                  <form id="frmsignup">
-                      <div class="form-group">
-                        <h3>สมัครสมาชิก
-                          <hr>
-                        </h3>
-                        <label for="email" id="lbEmailsignup">ชื่อผู้ใช้</label>
-                        <input type="email" class="form-control" id="emailsignup" for='email' placeholder="อีเมล์/ชื่อผู้ใช้">
-                      </div>
-                      <div class="form-group">
-                        <label for="password">รหัสผ่าน</label>
-                        <input type="password" class="form-control" id="passwordsignup" for='password' placeholder="รหัสผ่าน">
-                        <label for="password" id="lbPasswordsignup" style="display: none; color: red;">Wrong Password!</label>
-                      </div>
-                      
-                    </form>
-                </div>
-              </div>   
-              <input type="button" class="btn btn-primary" id="signup" value="สมัครสมาชิก">
-              </div>
-
-
-
 
                 <form id="frmLogin">
                   <div class="form-group">
@@ -78,14 +47,9 @@
                 </form>
 
                 <input type="button" class="btn btn-primary" id="signin" value="เข้าสู่ระบบ">
-
+                <button type="button" class="btn btn-info btnModel" data-toggle="modal" data-target="#myModalLogin">สมัครสมาชิก</button>
                
         </div>
-      </div>
-
-
-
-
       <div class="col-md-9">
         <h3>ตึกS <small><input type="button" class="btn btn-primary" id="signout" style="display: none;" value="LOGOUT"></small></h3>
         <hr>
@@ -246,9 +210,33 @@
           </div>
         </div>
       </div>
-
-    
-          
+        <!-- Modal login-->
+      <div class="modal fade" id="myModalLogin" role="dialog">
+          <div class="modal-dialog">
+  
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                  <h4 class="modal-title">สมัครสมาชิก</h4>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+              </div>
+              <div class="modal-body">
+                <div id="login-tab">
+                    <form id="frmsignup">
+                        <div class="form-group">
+                          <label for="email" id="lbEmailsignup">ชื่อผู้ใช้</label>
+                          <input type="email" class="form-control" id="emailsignup" for='email' placeholder="อีเมล์/ชื่อผู้ใช้">
+                        </div>
+                        <div class="form-group">
+                          <label for="password">รหัสผ่าน</label>
+                          <input type="password" class="form-control" id="passwordsignup" for='password' placeholder="รหัสผ่าน">
+                          <label for="password" id="lbPasswordsignup" style="display: none; color: red;">Wrong Password!</label>
+                        </div>
+                      </form>   
+                <input type="button" class="btn btn-primary" id="signup" value="สมัครสมาชิก">
+                </div>
+            </div>
+            </div>
               
     
 
