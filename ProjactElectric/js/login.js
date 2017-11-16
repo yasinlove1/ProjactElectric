@@ -13,6 +13,7 @@ $("#signin").click(function () {
         $("#email").val("")
         $("#password").val("")
         $("#frmLogin").hide()
+        $("#btnRes").hide()
         $('.btnModel').prop('disabled', false)
         $('.btnModel2').prop('disabled', false)
     }, function (error) {
@@ -33,7 +34,7 @@ $("#signout").click(function () {
             $("#frmLogin").show()
             $("#signin").show()
             $("#signup").hide()
-            $("#signout").hide()
+            $("#signout").hide()          
             $('.btnModel').prop('disabled', true)
             $('.btnModel2').prop('disabled', true)
         }, function (error) {
