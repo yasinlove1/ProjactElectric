@@ -32,7 +32,7 @@ $("#signout").click(function () {
         fireBaseAuth.signOut().then(function () {
             $("#frmLogin").show()
             $("#signin").show()
-            $("#signup").show()
+            $("#signup").hide()
             $("#signout").hide()
             $('.btnModel').prop('disabled', true)
             $('.btnModel2').prop('disabled', true)
@@ -44,11 +44,11 @@ $("#signout").click(function () {
 
 
 $("#signup").click(function () {
-    $("#lbPassword").hide()
+    $("#lbPasswordsignup").hide()
     $("#logInFail").hide()
     var fromSignUp = {
-        email: $("#email").val(),
-        pass: $("#password").val()
+        email: $("#emailsignup").val(),
+        pass: $("#passwordsignup").val()
     }
     fireBaseAuth.createUserWithEmailAndPassword(fromSignUp.email, fromSignUp.pass).then(function () {
         alert("สมัครสมาชิกเสร็จเรียบร้อย");
@@ -56,4 +56,7 @@ $("#signup").click(function () {
         alert("กรอกข้อมูลไม่ครบ");
     })
 })
+
+
+
 

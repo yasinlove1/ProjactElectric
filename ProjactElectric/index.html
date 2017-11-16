@@ -37,9 +37,33 @@
           <div class="login-from">
             <div class="tab-content">
               <div id="login-tab" class="tab-from-group">
+
+                  <form id="frmsignup">
+                      <div class="form-group">
+                        <h3>สมัครสมาชิก
+                          <hr>
+                        </h3>
+                        <label for="email" id="lbEmailsignup">ชื่อผู้ใช้</label>
+                        <input type="email" class="form-control" id="emailsignup" for='email' placeholder="อีเมล์/ชื่อผู้ใช้">
+                      </div>
+                      <div class="form-group">
+                        <label for="password">รหัสผ่าน</label>
+                        <input type="password" class="form-control" id="passwordsignup" for='password' placeholder="รหัสผ่าน">
+                        <label for="password" id="lbPasswordsignup" style="display: none; color: red;">Wrong Password!</label>
+                      </div>
+                      
+                    </form>
+                </div>
+              </div>   
+              <input type="button" class="btn btn-primary" id="signup" value="สมัครสมาชิก">
+              </div>
+
+
+
+
                 <form id="frmLogin">
                   <div class="form-group">
-                    <h3>Log In
+                    <h3>เข้าสู่ระบบ
                       <hr>
                     </h3>
                     <label for="email" id="lbEmail">ชื่อผู้ใช้</label>
@@ -50,19 +74,17 @@
                     <input type="password" class="form-control" id="password" for='password' placeholder="รหัสผ่าน">
                     <label for="password" id="lbPassword" style="display: none; color: red;">Wrong Password!</label>
                   </div>
-                  <label id="logInFail" style="display: none; color: red;">LogIn Fail Plece Check Username & Password!</label>
+                  <label id="logInFail" style="display: none; color: red;">ยังไม่ได้กรอก Email และ Password</label>
                 </form>
-              </div>
 
+                <input type="button" class="btn btn-primary" id="signin" value="เข้าสู่ระบบ">
 
-            </div>
-            <input type="button" class="btn btn-primary" id="signin" value="เข้าสู่ระบบ">
-            <input type="button" class="btn btn-primary" id="signup" value="สมัครสมาชิก">
-           
-          </div>
+               
         </div>
-
       </div>
+
+
+
 
       <div class="col-md-9">
         <h3>ตึกS <small><input type="button" class="btn btn-primary" id="signout" style="display: none;" value="LOGOUT"></small></h3>
@@ -227,6 +249,11 @@
         </div>
       </div>
 
+    
+          
+              
+    
+
 
       <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
         crossorigin="anonymous"></script>
@@ -238,6 +265,7 @@
       <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
       <script src="js/connectfirebase.js"></script>
       <script src="js/login.js"></script>
+      <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 </body>
 
