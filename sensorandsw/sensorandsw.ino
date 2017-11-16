@@ -2,8 +2,8 @@
 #include <FirebaseArduino.h>
 #define FIREBASE_HOST "datacontro.firebaseio.com"
 #define FIREBASE_AUTH "T4Sj1NzCmvsoClqegpG3VnaT9DLw2FzNKgqXZ0IR"
-#define WIFI_SSID "A406"
-#define WIFI_PASSWORD "maxzdrum1234"
+#define WIFI_SSID "iPad"
+#define WIFI_PASSWORD "mimimiml1111111"
 unsigned long timeout;
 int sensorone = D1;
 int sensortwo = D2;
@@ -12,6 +12,8 @@ int buttonAir2 = D6;
 int sensorState = 0;
 int buttonStateAir1 = 0;
 int buttonStateAir2 = 0;
+int btn1=0;
+int btn2 =0;
 bool toggle = false;
 bool toggle1 = false;
 int count = 0;
@@ -52,30 +54,37 @@ void loop() {
 void button() {
 
 
-  Firebase.set("room1/button", buttonStateAir1);
-  Firebase.set("room1/button2", buttonStateAir2);
-
-  Serial.println(digitalRead(buttonAir2));
-
-
+  
+   
+  buttonStateAir1 =Firebase.getInt("room1/button");
+   buttonStateAir2 =Firebase.getInt("room1/button2");
+  
+  
   if (digitalRead(buttonAir1) == HIGH && buttonStateAir1 == 0) {
 
 
     buttonStateAir1 = 1 ;
+    Firebase.set("room1/button", buttonStateAir1);
 
   } else if (digitalRead(buttonAir1) == HIGH && buttonStateAir1 == 1) {
 
     buttonStateAir1 = 0 ;
+    Firebase.set("room1/button", buttonStateAir1);
 
   }
 
   if (digitalRead(buttonAir2) == HIGH && buttonStateAir2 == 0) {
 
     buttonStateAir2 = 2 ;
-  } else if (digitalRead(buttonAir2) == HIGH && buttonStateAir2 == 2) {
+    Firebase.set("room1/button2", buttonStateAir2);
+  } else if (digitalRead(buttonAir2) == HIGH && buttonStateAir2 == 2 ) {
 
     buttonStateAir2 = 0 ;
+    Firebase.set("room1/button2", buttonStateAir2);
+  }else{
+    
   }
+
 }
 
 

@@ -26,12 +26,15 @@ function outQueue() {
     var upToFirebaseRoom2Air1 = dbFirebase.ref("room2/air")
     var upToFirebaseRoom2Air2 = dbFirebase.ref("room2/air1")
 
+
     var maxz = setInterval(() => {
         var dataOutQueue = queu.shift()
         if (dataOutQueue == 1) {
             upToFirebaseRoom1Air1.set(dataOutQueue)
+
         } else if (dataOutQueue == 2) {
             upToFirebaseRoom1Air2.set(dataOutQueue)
+
         } else if (dataOutQueue == 3) {
             upToFirebaseRoom2Air1.set(dataOutQueue)
         } else if (dataOutQueue == 4) {
