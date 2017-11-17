@@ -26,6 +26,7 @@ var numLEDR1s = numLEDR1.on('value', function(snapshot) {
     } else {
         $("#btn-LED-R1").addClass('btn-on');
         $("#btn-LED-R1").removeClass('btn-off');
+        
 
     }
     console.log('R1S101_LED:' + snapLEDR1)
@@ -107,9 +108,39 @@ var numAIR1R2s = numAIR1R2.on('value',function(snapshot){
  console.log('R1S102_AiR2:'+snapAIR1R2)
 });
 
+var numPerple1 = dbFirebase.ref("room1/UserinRoom");
+var numPerples = numPerple1.on("value", function (snapshot) {
+    document.querySelector("#Light_Row_one > input").checked = snapshot.val();
+    $('#Light_Row_one').click(function () {
+        numPerples = numPerple1.set('0', function () {
 
+        })
+    })
 
+});
 
+var numAIR0R2 = dbFirebase.ref('room1/air');
+var numAIR0R2s = numAIR0R2.on('value', function (snapshot) {
+    var snapAIR0R2 = snapshot.val();
+    var num = 0
+    var AIR;
+    if (snapAIR0R2 == num) {
+        document.querySelector("#Airone1R1 > input").checked = false
+    } else {
+        document.querySelector("#Airone1R1 > input").checked = true
+    }
+});
 
+var numAIR1R2 = dbFirebase.ref('room1/air1');
+var numAIR1R2s = numAIR1R2.on('value', function (snapshot) {
+    var snapAIR1R2 = snapshot.val();
+    var num = 0
+    var AIR;
+    if (snapAIR1R2 == num) {
+        document.querySelector("#Airone2R1 > input").checked = false
+    } else {
+        document.querySelector("#Airone2R1 > input").checked = true
+    }
+});
 
 

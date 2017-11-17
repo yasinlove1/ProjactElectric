@@ -33,7 +33,8 @@ $("#signout").click(function () {
         fireBaseAuth.signOut().then(function () {
             $("#frmLogin").show()
             $("#signin").show()
-            $("#signup").hide()
+            $("#btnRes").show()
+            $("#signup").show()
             $("#signout").hide()          
             $('.btnModel').prop('disabled', true)
             $('.btnModel2').prop('disabled', true)
