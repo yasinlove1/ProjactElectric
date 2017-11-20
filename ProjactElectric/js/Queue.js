@@ -9,19 +9,14 @@ function addArr(num) {
         } else {
 
         }
-
-
     }
     if (queu.length <= 1) {
 
         outQueue()
-
     }
-
     console.log(queu)
     console.log(queu.length)
 }
-
 
 function outQueue() {
 
