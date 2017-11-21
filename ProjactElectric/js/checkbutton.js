@@ -15,3 +15,10 @@ $('#Light_Row_one').click(function(){
 
 })
 });
+var UserR2 = dfFirebaseUserR2.on('value',function(snapshot){
+document.querySelector('#Light_Row_one1').checked = snapshot.val();
+$('#Light_')
+
+
+
+}
