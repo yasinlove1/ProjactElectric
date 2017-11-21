@@ -7,7 +7,7 @@ var config = {
     messagingSenderId: "585589132177"
 };
 firebase.initializeApp(config);
-
+// โชว์ เช็คสถานะ แล้วเปลี่ยนสี//
 var dbFirebase = firebase.database();
 var dbRef = firebase.database().ref()
 var firebaseAuth = firebase.auth
@@ -119,12 +119,23 @@ var numPerples1 = numPerple1.on("value", function(snapshot) {
 });
 
 
-
 var numPerple2 = dbFirebase.ref("room2/UserinRoom");
 var numPerples2 = numPerple2.on("value", function(snapshot) {
     document.querySelector("#Light_Row_one1 > input").checked = snapshot.val();
     $('#Light_Row_one1').click(function() {
         numPerples2 = numPerple2.set('0', function() {
+
+        })
+    })
+
+});
+
+
+var btnAirS101 = dbFirebase.ref("room1/UserinRoom");
+var btnAirS101s = btnLightS101.on("value",function(snapshot){
+    document.querySelector("#AirOneR1R1 > input").checked = snapshot.val();
+    $('#AirOneR1R1').click(function(){
+        btnLightS101s = btnLightS101.set('0',function(){
 
         })
     })

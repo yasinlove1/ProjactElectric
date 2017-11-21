@@ -39,7 +39,8 @@
                     <div class="login-from">
                         <div class="tab-content">
                             <div id="login-tab" class="tab-from-group">
-                                <form id="frmLogin">
+                                
+                                <form id="frmLogin" onsubmit="return check(this)">
                                     <div class="form-group">
                                         <h3>Log In
                                             <hr>
@@ -58,7 +59,7 @@
 
 
                         </div>
-                        <input type="button" class="btn btn-primary" id="signin" value="เข้าสู่ระบบ">
+                        <input type="submit" class="btn btn-primary" id="signin" value="เข้าสู่ระบบ">
                         <input type="button" class="btn btn-primary" id="signup" value="สมัครสมาชิก">
 
                     </div>
@@ -122,11 +123,6 @@
                         </div>
                     </div>
                 </div>
-                <br></br>
-                <h4>จำนวนคน
-                    <p class="h2" id="userinRoomS102">0</p>
-                </h4>
-                <button type="button" class="btn btn-info btn-lg btnModel2" data-toggle="modal" data-target="#myModal102" disabled>Control</button>
                 </center>
             </div>
 
@@ -212,9 +208,9 @@
                                     <br>
                                     <!--toggle button-->
                                     <label class="switch" id="Light_Row_one1">
-                    <input onclick="Light_Row_one1.set(+this.checked)" type="checkbox">
-                    <div class="slider round"></div>
-                  </label>
+                                 <input onclick="Light_Row_one1.set(+this.checked)" type="checkbox">
+                                <div class="slider round"></div>
+                                 </label>
                                     <br>
                                     <br>
                                 </div>
