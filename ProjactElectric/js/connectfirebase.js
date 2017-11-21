@@ -111,31 +111,65 @@ var numAIR1R2s = numAIR1R2.on('value', function(snapshot) {
 var numPerple1 = dbFirebase.ref("room1/UserinRoom");
 var numPerples1 = numPerple1.on("value", function(snapshot) {
     document.querySelector("#Light_Row_one > input").checked = snapshot.val();
+    
     $('#Light_Row_one').click(function() {
         numPerples1 = numPerple1.set('0', function() {
-
-        })
-    })
+        
+})
 });
 
+});
 
 var numPerple2 = dbFirebase.ref("room2/UserinRoom");
 var numPerples2 = numPerple2.on("value", function(snapshot) {
     document.querySelector("#Light_Row_one1 > input").checked = snapshot.val();
+   
     $('#Light_Row_one1').click(function() {
         numPerples2 = numPerple2.set('0', function() {
-
+    
+        
+        
         })
     })
 
 });
 
 
-var btnAirS101 = dbFirebase.ref("room1/UserinRoom");
+var btnAirS101 = dbFirebase.ref("room1/Air");
 var btnAirS101s = btnLightS101.on("value",function(snapshot){
     document.querySelector("#AirOneR1R1 > input").checked = snapshot.val();
     $('#AirOneR1R1').click(function(){
         btnLightS101s = btnLightS101.set('0',function(){
+
+        })
+    })
+
+});
+
+var btnAir1S101 = dbFirebase.ref("room1/Air1");
+var btnAir1S101s = btnLight1S101.on("value",function(snapshot){
+    document.querySelector("#AirOne2R1 > input").checked = snapshot.val();
+    $('#AirOne2R1').click(function(){
+        btnLight1S101s = btnLight1S101.set('0',function(){
+
+        })
+    })
+});
+var btnAirS102 = dbFirebase.ref("room2/Air");
+var btnAirS102s = btnAirS102.on("value",function(snapshot){
+    document.querySelector("#AirOneR2 > input").checked = snapshot.val();
+    $('#AirOneR2').click(function(){
+        btnLightS101s = btnLightS101.set('0',function(){
+
+        })
+    })
+
+});
+var btnAir1S102 = dbFirebase.ref("room2/Air1");
+var btnAir1S102s = btnAir1S102.on("value",function(snapshot){
+    document.querySelector("#AirOneR2 > input").checked = snapshot.val();
+    $('#AirOneR2').click(function(){
+        btnAir1S102s = btnAir1S102.set('0',function(){
 
         })
     })
