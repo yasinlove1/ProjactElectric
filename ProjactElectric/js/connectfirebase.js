@@ -107,27 +107,26 @@ var numAIR1R2s = numAIR1R2.on('value', function(snapshot) {
     console.log('R1S102_AiR2:' + snapAIR1R2)
 });
 
+//กดปิด/เปิด
+var numPerple1 = dbFirebase.ref("room1/UserinRoom");
+var numPerples1 = numPerple1.on("value", function(snapshot) {
+    document.querySelector("#Light_Row_one > input").checked = snapshot.val();
+    $('#Light_Row_one').click(function() {
+        numPerples1 = numPerple1.set('0', function() {
+
+        })
+    })
+});
 
 
-function name() {
 
-    var button1FB1 = dbFirebase.ref("room1/air");
-    button1FB1.on('value', function(snapshot) {
-        FBdata11 = snapshot.val();
+var numPerple2 = dbFirebase.ref("room2/UserinRoom");
+var numPerples2 = numPerple2.on("value", function(snapshot) {
+    document.querySelector("#Light_Row_one1 > input").checked = snapshot.val();
+    $('#Light_Row_one1').click(function() {
+        numPerples2 = numPerple2.set('0', function() {
 
+        })
+    })
 
-    });
-    return FBdata11;
-};
-
-
-function name1() {
-    var FBdata111;
-    var button1FB11 = dbFirebase.ref('room1/air2');
-    button1FB11.on('value', function(snapshot) {
-        FBdata111 = snapshot.val();
-
-
-    });
-    return FBdata111;
-};
+});

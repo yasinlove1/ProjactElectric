@@ -1,17 +1,17 @@
-var dfFirebase = fireBase.ref('room1/Userinroom');
-var dfRef = firebase.databasae().ref()
-var num = 0 ;
-var numuserR1s = numUserR1.on('value',function(snapshot){
-var numuserR1 = snapshot.val();
-var LED;
+var dfFirebaseUserR1 = fireBase.ref('room1/Userinroom');
+var dfFirebaseAir1R1 = firebase.ref('room1/air');
+var dfFirebaseAir2R1 = firebase.ref('room1/air1');
+var dfFirebaseUserR2 = firebase.ref('room2/Userinroom');
+var dfFirebaseAir1R2 = firebase.ref('room2/air');
+var dfFirebaseAir2R2 = firebase.ref('room2/air1');
 
-if(numuserR1==num){
-    
-}
-
+var UserR1 = dfFirebaseUserR1.on("value",function(snapshot){
+document.querySelector("#Light_Row_one").checked = snapshot.val();
+$('#Light_Row_one').click(function(){
+    dfFirebaseUserR1 = UserR1.set('0'),function(){}
 
 
 
 
 })
-
+});
