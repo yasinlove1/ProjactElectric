@@ -1,14 +1,10 @@
 var queu = [];
 
 function addArr(num) {
-    // var status = true;
 
     if (queu.length < 2 || queu.length < 4) {
-        if (num != num) {
-            queu.push(num)
-        } else {
 
-        }
+        queu.push(num)
     }
     if (queu.length <= 1) {
 

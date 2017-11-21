@@ -4,69 +4,52 @@
 #define FIREBASE_AUTH "T4Sj1NzCmvsoClqegpG3VnaT9DLw2FzNKgqXZ0IR"
 #define WIFI_SSID "iPad"
 #define WIFI_PASSWORD "mimimiml1111111"
+
 unsigned long timeout;
 int sensorone = D1;
 int sensortwo = D2;
-//int buttonAir1 = D3;
-//int buttonAir2 = D6;
-int sensorState = 0;
-//int buttonStateAir1 = 0;
-//int buttonStateAir2 = 0;
-//int btn1=0;
-//int btn2 =0;
 bool toggle = false;
 bool toggle1 = false;
 int count = 0;
 
 void setup() {
 
-    pinMode(sensorone, INPUT);
-    pinMode(sensortwo, INPUT);
-//  pinMode(buttonAir1, INPUT);
-//  pinMode(buttonAir2, INPUT);
+  pinMode(sensorone, INPUT);
+  pinMode(sensortwo, INPUT);
+
   Serial.begin(115200);
   WiFi.mode(WIFI_STA);
   WiFi.begin (WIFI_SSID, WIFI_PASSWORD);
-  //  Serial.println("connecting....");
+    Serial.println("connecting....");
 
   while (WiFi.status() != WL_CONNECTED) {
-        Serial.println(".");
+    Serial.println(".");
     delay(500);
 
   }//loop while
   Serial.println();
   Serial.println("connecting.....");
   Serial.println(WiFi.localIP());
-
-
   Firebase.begin(FIREBASE_HOST, FIREBASE_AUTH);
   Firebase.set("room1/UserinRoom", 0);
-
 }
 
 void loop() {
 
-if (count >= 0) {
+  if (count >= 0) {
     Firebase.set("room1/UserinRoom", count);
-    Firebase.set("room1/toggle1",toggle1);
+    Firebase.set("room1/toggle1", toggle1);
   }
-
-
   if (digitalRead(sensorone) == LOW && toggle == false) {
     sensorState = 1 ;
     timeout = millis();
     toggle = true;
-
   } else if (digitalRead(sensortwo) == LOW && toggle == false) {
-
     sensorState = 2 ;
     timeout = millis();
     toggle = true;
   }
-
   Serial.println(sensorState);
-  
-    
   if (sensorState == 1 && digitalRead(sensortwo) == LOW) {
     count++;
     toggle = false;
@@ -78,13 +61,9 @@ if (count >= 0) {
     toggle1 = true;
     sensorState = 0;
   }
-
   if (millis() - timeout > 5000 && toggle == true) {
     toggle = false;
-
   }
-
-
 }
 
 

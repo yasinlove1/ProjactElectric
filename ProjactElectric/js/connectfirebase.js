@@ -106,3 +106,26 @@ var numAIR1R2s = numAIR1R2.on('value', function(snapshot) {
     }
     console.log('R1S102_AiR2:' + snapAIR1R2)
 });
+
+function name() {
+
+    var button1FB1 = dbFirebase.ref("room1/air");
+    button1FB1.on('value', function(snapshot) {
+        FBdata11 = snapshot.val();
+
+
+    });
+    return FBdata11;
+};
+
+
+function name1() {
+    var FBdata111;
+    var button1FB11 = dbFirebase.ref('room1/air2');
+    button1FB11.on('value', function(snapshot) {
+        FBdata111 = snapshot.val();
+
+
+    });
+    return FBdata111;
+};
